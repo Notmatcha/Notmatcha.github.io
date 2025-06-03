@@ -53,6 +53,45 @@
         .skill-badge:hover {
             transform: scale(1.05);
         }
+        #Events {
+        width: 100%;
+        overflow: hidden;
+        background-color: #f0f0f0;
+        padding: 1rem 0;
+        }
+
+        .Event-belt {
+        display: flex;
+        width: max-content;
+        animation: scroll 20s linear infinite;
+        }
+
+        .Event-card {
+        min-width: 250px;
+        height: 150px;
+        margin-right: 20px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
@@ -107,7 +146,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="animate-fade-in">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-primary-600 dark:text-primary-400">Ng Ding Jie</span></h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Computer Science Student</h2>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Computer Science Student<p>Specializing in Cybersecurity</p></h2>
                     <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
                         Passionate about software development, machine learning, and building innovative solutions to real-world problems.
                     </p>
@@ -134,7 +173,41 @@
             </div>
         </div>
     </section>
-
+    <!-- About Me Section -->
+    <section id="About" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl font-bold mb-4">About Me</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    I am a...
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- In progress Section -->
+    <section id="progress" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl font-bold mb-4">In Progress</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Am currently trying to get better at CTF
+                </p>
+            </div>
+            <div id="Events">
+            <div class="Event-belt">
+                <div class="Event-card" style="background-image: url('images/cddc.png');"> CDDC DSTA BrainHack</div>
+                <div class="Event-card" style="background-image: url('images/greyhats.png');">NUSGREYHATS</div>
+                <div class="Event-card" style="background-image: url('images/pentest.jpg');">Coursera Penetration Testing</div>
+                <div class="Event-card" style="background-image: url('images/homelab.jpg');">Home Lab Setup</div>
+                <!-- Repeated for looping effect -->
+                <div class="Event-card" style="background-image: url('images/cddc.png');"> CDDC DSTA BrainHack</div>
+                <div class="Event-card" style="background-image: url('images/greyhats.png');">NUSGREYHATS</div>
+                <div class="Event-card" style="background-image: url('images/pentest.jpg');">Coursera Penetration Testing</div>
+                <div class="Event-card" style="background-image: url('images/homelab.jpg');">Home Lab Setup</div>
+            </div>
+            </div>
+        </div>
+    </section>
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -292,14 +365,13 @@
                 image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
             }
         ];
-
         // Data for skills
         const skills = [
             { name: "Python", icon: "fab fa-python", level: "Advanced" },
             { name: "JavaScript", icon: "fab fa-js", level: "Advanced" },
             { name: "Java", icon: "fab fa-java", level: "Intermediate" },
             { name: "C++", icon: "fas fa-code", level: "Intermediate" },
-            { name: "React", icon: "fab fa-react", level: "Intermediate" },
+            { name: "React", icon: "fab fa-react", level: "Beginner" },
             { name: "Node.js", icon: "fab fa-node-js", level: "Intermediate" },
             { name: "HTML/CSS", icon: "fab fa-html5", level: "Advanced" },
             { name: "SQL", icon: "fas fa-database", level: "Intermediate" },
@@ -315,12 +387,12 @@
                 degree: "Bachelor of Science in Computer Science",
                 institution: "Singapore University of Techonlogy and Design",
                 year: "2023 - 2027 (Expected)",
-                description: "GPA: 3.7/4.0. Relevant coursework: Data Structures, Algorithms, Machine Learning, Computer Networks, Database Systems, Cybersecurity, Compututaional Structures"
+                description: "GPA: 3.9/5.0. Relevant coursework: Data Structures, Algorithms, Machine Learning, Computer Networks, Database Systems, Cybersecurity, Compututaional Structures"
             },
             {
-                degree: "High School Diploma",
+                degree: "A-Level Certificate",
                 institution: "Catholic Junoir College",
-                year: "2016 - 2020",
+                year: "2019 - 2021",
                 description: "A-levels graduate"
             },
             {
@@ -362,13 +434,26 @@
             const skillsContainer = document.querySelector('#skills .grid');
             skills.forEach((skill, index) => {
                 const skillElement = document.createElement('div');
-                skillElement.className = `skill-badge flex flex-col items-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in delay-${(index % 5) * 100}`;
+                skillElement.className = `skill-badge flex flex-col items-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in delay`
                 skillElement.innerHTML = `
                     <i class="${skill.icon} text-4xl mb-3 text-primary-600 dark:text-primary-400"></i>
                     <h3 class="font-medium mb-1">${skill.name}</h3>
                     <span class="text-sm text-gray-500 dark:text-gray-400">${skill.level}</span>
                 `;
                 skillsContainer.appendChild(skillElement);
+            });
+
+            //Render Events
+            const belt = document.querySelector('#Events .Event-belt');
+            const Eventscontainer = document.getElementById('Events');
+
+
+            Eventscontainer.addEventListener('mouseover', () => {
+                belt.style.animationPlayState = 'paused';
+            });
+
+            Eventscontainer.addEventListener('mouseout', () => {
+                belt.style.animationPlayState = 'running';
             });
             
             // Render education
@@ -453,5 +538,7 @@
             }
         }
     </script>
+    
+
 </body>
 </html>
