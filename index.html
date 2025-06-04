@@ -32,6 +32,20 @@
         }
     </script>
     <style>
+    .bg-light {
+    background-image: url('images/blurr2.jpg');
+    }
+
+    .dark .bg-dark {
+    background-image: url('images/blurr1.jpg');
+    }
+
+    .bg-theme {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image 0.5s ease-in-out;
+    }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -104,7 +118,7 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavClick(event)">Home</a>
-                    <a href="#About" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavClick(event)">About Me</a>
+                    <a href="Aboutme.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavClick(event)">About Me</a>
                     <a href="#progress" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavClick(event)">In Progress</a>
                     <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavClick(event)">Projects</a>
                     <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavClick(event)">Skills</a>
@@ -143,7 +157,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-16">
+    <section id="home" class="min-h-screen flex items-center pt-16 bg-theme bg-light bg-dark">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="animate-fade-in">
@@ -436,7 +450,7 @@
             const skillsContainer = document.querySelector('#skills .grid');
             skills.forEach((skill, index) => {
                 const skillElement = document.createElement('div');
-                skillElement.className = `skill-badge flex flex-col items-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in delay`
+                skillElement.className = `skill-badge flex flex-col items-center p-6 bg-white dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in delay-${index%5 *100}`
                 skillElement.innerHTML = `
                     <i class="${skill.icon} text-4xl mb-3 text-primary-600 dark:text-primary-400"></i>
                     <h3 class="font-medium mb-1">${skill.name}</h3>
